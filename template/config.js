@@ -10,6 +10,7 @@ module.exports = {
             username: '',
             database: '',
             host: '',
+            password: '',
             port: 0,
             dialect: 'mysql',
             pool: {

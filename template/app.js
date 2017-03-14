@@ -7,6 +7,7 @@ var path = require('path');
 var koaJson = require('koa-json');
 var bodyParser = require('koa-bodyparser');
 var controller = require('./router');
+var cxt = require('./context/index');
 var env = require('./lib/config').getEnv();
 
 var app = koa();
@@ -17,6 +18,7 @@ app.use(serve(path.join(__dirname, 'public')));
 app.use(compress());
 app.use(logger());
 controller.register(app);
+cxt.register(app);
 
 try {
     if (env === "development") {
