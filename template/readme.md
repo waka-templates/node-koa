@@ -1,3 +1,4 @@
+
 #### 启动服务
 * cd 项目目录
 * npm i 
@@ -17,3 +18,8 @@
 #### 使用Mysql
 * 在config.js文件中, 按照模板配置Mysql数据库信息，Mysql使用sequelize做ORM, 使用示例参考/service/use_db_demo/index.js，更多用法参见http://docs.sequelizejs.com
 {{/mysql}}
+
+{{#sentry}}
+#### 使用Sentry
+* 在config.js文件中, 配置sentryDSN地址。上报异常信息时使用/lib/sentry.js中的sendLog方法。 上报的信息可在sentry平台统一查看。
+{{/sentry}}

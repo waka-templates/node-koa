@@ -12,6 +12,11 @@ module.exports = {
         return config[env].tair;
     },
 {{/tair}}
+{{#sentry}}
+    getSentryDSN:function(){
+        return config.SENTRY_DSN;
+    },
+{{/sentry}}
     getEnv: function () {
         return env;
     }

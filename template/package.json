@@ -26,6 +26,9 @@
     "mysql": "^2.6.1",
     "sequelize": "^3.0.1",
     {{/mysql}}
+    {{#sentry}}
+    "raven": "^1.1.4",
+    {{/sentry}}
     "swig": "^1.4.2"
   },
   "devDependencies": {},

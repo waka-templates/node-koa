@@ -26,6 +26,10 @@ module.exports = {
         mysql: {
             type: 'confirm',
             message: 'need mysql database?'
+        },
+        sentry: {
+            type: 'confirm',
+            message: 'need sentry?'
         }
     },
     filters:{
@@ -33,6 +37,7 @@ module.exports = {
         'lib/tair.js':'tair',
         'service/db/*':'mysql',
         'service/use_db_demo/*':'mysql',
+        'lib/sentry.js':'sentry'
     },
     completeMessage: "init project successfully. \n read more in readme.md"
 };

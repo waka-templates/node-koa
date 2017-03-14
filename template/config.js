@@ -2,7 +2,9 @@
 module.exports = {
     //common config
     //...
-
+{{#sentry}}
+    'SENTRY_DSN': '',
+{{/sentry}}
     //config for different environment
     development:{
 {{#mysql}}
