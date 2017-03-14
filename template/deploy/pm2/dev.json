@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "{{ name }}",
+      "script": "app.js",
+      "args": [],
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "error_file": "{{ name }}-err.log",
+      "out_file": "{{ name }}-out.log",
+      "node_args": "--harmony",
+      "cwd": ".",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    }
+  ]
+}
