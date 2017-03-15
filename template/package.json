@@ -12,7 +12,6 @@
     "@mtfe/node-tair": "0.0.3",
     {{/tair}}
     "@mx/kms": "^0.2.0",
-    "co": "^4.5.4",
     "co-request": "^0.2.1",
     "co-views": "^2.1.0",
     "koa": "^0.20.0",
@@ -29,7 +28,11 @@
     {{#sentry}}
     "raven": "^1.1.4",
     {{/sentry}}
-    "swig": "^1.4.2"
+    {{#pug}}
+    "pug": "^1.9.9",
+    {{/pug}}
+    "swig": "^1.4.2",
+    "co": "^4.5.4"
   },
   "devDependencies": {},
   "author": "{{ author }}",

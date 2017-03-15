@@ -1,5 +1,4 @@
 'use strict';
-var render = require('../lib/render.js');
 
 var HomeIndex = function* () {
 
@@ -14,13 +13,26 @@ var HomeIndex = function* () {
     // let cache = yield this.tair.getCache('demo-test-set');
     {{/tair}}
 
-    return this.body = yield render('./home/index',{
+    return this.body = yield this.render('./home/index',{
         project: "{{ name }}",
         author: "{{ author }}"
     });
 };
+{{#pug}}
+var JadeDemo = function*() {
+    return this.body = yield this.render('./home/author.pug',{
+        user: {
+            name: "{{ author }}",
+            appearance: 'handsome'
+        }
+    });
+};
+{{/pug}}
 
 module.exports.register = function (router) {
     router.get('/',HomeIndex);
-    router.get('/home/index',HomeIndex)
+    router.get('/home/swig',HomeIndex);
+    {{#pug}}
+    router.get('/home/pug_jade',JadeDemo);
+    {{/pug}}
 };

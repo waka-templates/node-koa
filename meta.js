@@ -30,6 +30,10 @@ module.exports = {
         sentry: {
             type: 'confirm',
             message: 'need sentry?'
+        },
+        pug: {
+            type: 'confirm',
+            message: 'add pug/jade template engine? (swig is build-in already)'
         }
     },
     filters:{
@@ -37,7 +41,8 @@ module.exports = {
         'lib/tair.js':'tair',
         'service/db/*':'mysql',
         'service/use_db_demo/*':'mysql',
-        'lib/sentry.js':'sentry'
+        'lib/sentry.js':'sentry',
+        'views/home/author.pug':'pug'
     },
     completeMessage: "init project successfully. \n read more in readme.md"
 };
