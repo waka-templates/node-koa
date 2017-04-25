@@ -31,6 +31,10 @@ module.exports = {
             type: 'confirm',
             message: 'need sentry?'
         },
+        oauth: {
+            type: "confirm",
+            message: "need neixin/大象 oauth?"
+        },
         pug: {
             type: 'confirm',
             message: 'add pug/jade template engine? (swig is build-in already)'
@@ -42,7 +46,8 @@ module.exports = {
         'service/db/*':'mysql',
         'service/use_db_demo/*':'mysql',
         'lib/sentry.js':'sentry',
-        'views/home/author.pug':'pug'
+        'views/home/author.pug':'pug',
+        'router/auth.js':'oauth'
     },
     completeMessage: "init project successfully. \n read more in readme.md"
 };

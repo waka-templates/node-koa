@@ -1,19 +1,29 @@
 'use strict';
-var koa = require('koa');
-var compress = require('koa-compress');
-var logger = require('koa-logger');
-var serve = require('koa-static');
-var path = require('path');
-var koaJson = require('koa-json');
-var bodyParser = require('koa-bodyparser');
-var controller = require('./router');
-var cxt = require('./context/index');
-var env = require('./lib/config').getEnv();
-
-var app = koa();
+const koa = require('koa');
+const compress = require('koa-compress');
+const logger = require('koa-logger');
+const serve = require('koa-static');
+const path = require('path');
+const koaJson = require('koa-json');
+const bodyParser = require('koa-bodyparser');
+const controller = require('./router');
+const cxt = require('./context/index');
+const env = require('./lib/config').getEnv();
+{{#oauth}}
+const oauth = require('../index');
+{{/oauth}}
+const app = koa();
 
 app.use(bodyParser());
 app.use(koaJson());
+{{#oauth}}
+//不需要鉴权的路由配置
+const ignorePath = {
+    path: [],
+    pathRegex: []
+};
+app.use(oauth('appKey','appSecret','http://127.0.0.1:9900/oauth/callback',ignorePath));
+{{/oauth}}
 app.use(serve(path.join(__dirname, 'public')));
 app.use(compress());
 app.use(logger());

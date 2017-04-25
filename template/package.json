@@ -11,6 +11,9 @@
     {{#tair}}
     "@mtfe/node-tair": "0.0.3",
     {{/tair}}
+    {{#oauth}}
+    "nx-oauth-koa": "1.x",
+    {{/oauth}}
     "@mx/kms": "^0.2.0",
     "co-request": "^0.2.1",
     "co-views": "^2.1.0",
