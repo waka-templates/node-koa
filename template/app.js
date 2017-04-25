@@ -10,7 +10,7 @@ const controller = require('./router');
 const cxt = require('./context/index');
 const env = require('./lib/config').getEnv();
 {{#oauth}}
-const oauth = require('../index');
+const oauth = require('nx-oauth-koa');
 {{/oauth}}
 const app = koa();
 
